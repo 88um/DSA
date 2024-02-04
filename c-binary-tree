@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Binary Tree.C
+
+typedef struct Node {
+    int data;
+    struct Node* left;
+    struct Node* right;
+} Node;
+
+Node* createNode(int data) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    if (newNode != NULL){
+        newNode->data = data;
+        newNode->left = newNode->right = NULL;
+    }
+    return newNode;
+    
+}
+
+void printTree(Node* root) {
+    if (root != NULL) {
+        printf("%d ", root->data);
+        printTreePreOrder(root->left);
+        printTreePreOrder(root->right);
+    }
+}
+
+void freeTree(Node* root) {
+    if (root == NULL) {
+        return;
+    }
+    freeTree(root->left);
+    freeTree(root->right);
+    free(root);
+}
+
+int main() {
+    
+    
+    return 0;
+}
