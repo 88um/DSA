@@ -1,3 +1,3 @@
 # DSA
 
-Implementations in java
+Implementations in java and C
